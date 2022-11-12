@@ -1,11 +1,11 @@
 #/bin/bash
 cvmfsversion=$1
+os=$2
 arch=$(dpkg --print-architecture)
-os=debian11
 
 apt-get update
 apt-get install -y wget
-if [ "$arch" = "ppc64el" ] || [ "$arch" = "arm64" ]
+if [ "$arch" = "ppc64el" ]
 then
     apt-get install -y devscripts libfuse3-dev cmake cpio libcap-dev libssl-dev libfuse-dev pkg-config libattr1-dev python-dev python-setuptools python3-dev python3-setuptools uuid-dev valgrind libz-dev lsb-release
     # Set Python 2 as default Python
